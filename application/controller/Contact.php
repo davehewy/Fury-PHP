@@ -14,6 +14,8 @@
 			$this->load->model('special/mate');
 			$this->mate->makeMe();
 			
+			$this->template->load($variable);
+			
 			$data = array("name"=>"dave");
 			
 			
@@ -21,7 +23,10 @@
 			$this->load->view("contact");
 			
 			$this->db->connectDefault();
-			if($this->db->query("select category from categories where category='Membership'")->row()){
+			
+			
+			
+			if($this->db->query("select category from categories where category='Membership'")->row()){}
 			
 			
 			

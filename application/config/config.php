@@ -21,7 +21,7 @@
 	// ! Auto load models   
 	// =========== 
 	
-	$config['auto_load_models'] = array();
+	$config['auto_load_models'] = array("test");
 			
 	// =========== 
 	// ! Database Config   
@@ -109,4 +109,18 @@
 	
 	$config['routes']['default_controller'] = "home/login";
 	
+	// =========== 
+	// ! Turn on and off Templating   
+	// =========== 
+	
+	$config['auto_templating'] = TRUE;
+	
+	// =========== 
+	// ! Templating this will be the default header and footer loaded into your template view   
+	// =========== 
+	
+	# Specify either an array or a single theme folder.
+	# Example usage: array("loggedin"=>"default","loggedout"=>"outsidedefault");
+	
+	$config['default_template'] = array("default"=>"loggedout","inside"=>"loggedin");
 	

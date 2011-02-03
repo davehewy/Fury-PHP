@@ -8,7 +8,7 @@
 		
 		function makeMe(){
 		
-			//echo 'Make me do something';
+			echo 'Make me do something';
 		
 		}
 	
