@@ -119,8 +119,7 @@
 	// ! Templating this will be the default header and footer loaded into your template view   
 	// =========== 
 	
-	# Specify either an array or a single theme folder.
-	# Example usage: array("loggedin"=>"default","loggedout"=>"outsidedefault");
+	# Specify the folder containing your default template.
 	
-	$config['default_template'] = array("default"=>"loggedout","inside"=>"loggedin");
+	$config['default_template'] = "default";
 	

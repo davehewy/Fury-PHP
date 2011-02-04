@@ -33,6 +33,7 @@
 								'uri'		=> 'URI',
 								'router'	=> 'Router',
 								'output'	=> 'Output',
+								'themes' => 'Templating',
 							);
 			
 			foreach ($classes as $var => $class){

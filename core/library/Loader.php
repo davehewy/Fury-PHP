@@ -227,7 +227,6 @@
 			
 			# Include the path
 			
-			echo $_fury_path;
 						
 			include($_fury_path);
 			

@@ -103,7 +103,7 @@
 	$URI =& load_class('URI');
 	$CF =& load_class("Core");
 	$OUT =& load_class("Output");
-	
+	$THEMES =& load_class('Templating');
 	
 	require(ROOT.'core'.DS.'fury5.php');
 	
