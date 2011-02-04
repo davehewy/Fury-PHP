@@ -243,6 +243,14 @@
 		}
 		
 		// =========== 
+		// ! Alpha upper case and space   
+		// =========== 
+		
+		function alpha_loose($str){
+			return ( ! preg_match("/^([a-zA-Z ])+$/i", $str)) ? FALSE : TRUE;
+		}		
+		
+		// =========== 
 		// ! Alpha Numeric only   
 		// ===========
 		 
