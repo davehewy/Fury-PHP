@@ -29,12 +29,35 @@
 	
 	}
 	
+	// =========== 
+	// ! Closes a form.   
+	// =========== 
+	
 	if( ! function_exists('form_close')){
 		function form_close(){
 			return '</form>';
 		}
 	}
 	
+	// =========== 
+	// ! Sets a value to the value  
+	// =========== 
+	
+	if( ! function_exists('set_value')){
+	
+		function set_value($value,$default = false){
+			
+			if($_POST[$value]){
+				return $_POST[$value];
+			}elseif($default){
+				return $default;
+			}else{
+				return false;
+			}
+		
+		}
+	
+	}
 	
 	// =========== 
 	// ! Converts all attributes passed in an array to a string.   
