@@ -84,7 +84,7 @@
 	
 	// Available core apps are Postmark, Postmark_Zend (postmark but using zend for delivering help)
 	
-	$config['email_app'] = "";
+	$config['email_app'] = "postmark";
 	
 	// =========== 
 	// ! If you are using Zend in any part of this application please define your include path   
@@ -92,6 +92,19 @@
 	
 	$config['local_include'] = "/usr/lib/php/libraries/zend-framework-1.11.2/";
 	$config['remote_include'] = "/";
+	
+	// =========== 
+	// ! Configure API Keys. Require by the likes of Postmark or what not.
+	// =========== 
+	
+	$config['apikey'][$config['email_app']] = '9bf3b3f-4109-4bb9-8e71-3ba43aa54fa7';
+	
+	
+	// =========== 
+	// ! Default webmaster address to send mail from unless otherwise overwritten will be used.     
+	// =========== 	
+	
+	$config['webmaster_email'] = 'webmaster@street-crime.com';
 	
 	// =========== 
 	// ! Basic routing   
