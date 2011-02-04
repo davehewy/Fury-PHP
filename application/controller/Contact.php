@@ -6,6 +6,8 @@
 		function __construct(){
 			
 			parent::Controller();
+			
+			$this->load->library('Postmark_Zend');
 		
 		}
 		

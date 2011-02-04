@@ -47,7 +47,7 @@
 	
 		function set_value($value,$default = false){
 			
-			if($_POST[$value]){
+			if(isset($_POST[$value])){
 				return $_POST[$value];
 			}elseif($default){
 				return $default;

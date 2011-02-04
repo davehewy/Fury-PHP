@@ -77,6 +77,21 @@
 		
 	$config['auto_db_connect'] = TRUE;	
 	
+	// =========== 
+	// ! Email delivering, do you want to use a defined client library
+	// * as found in either core system files or your own apps library? 
+	// =========== 
+	
+	// Available core apps are Postmark, Postmark_Zend (postmark but using zend for delivering help)
+	
+	$config['email_app'] = "";
+	
+	// =========== 
+	// ! If you are using Zend in any part of this application please define your include path   
+	// =========== 
+	
+	$config['local_include'] = "/usr/lib/php/libraries/zend-framework-1.11.2/";
+	$config['remote_include'] = "/";
 	
 	// =========== 
 	// ! Basic routing   
