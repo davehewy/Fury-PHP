@@ -91,6 +91,42 @@
 			 	}
 		 	}
 		 }
+		 
+		 // =========== 
+		 // ! Insert a record to the database   
+		 // =========== 
+		 
+		function insert($table, $assoc_arr, $ret = false){
+		    foreach($assoc_arr as $k=>$v)
+			    $assoc_arr[$k] = mes($v);
+			
+			    $insertstr="INSERT INTO `".$table."`";
+			    
+			    $insertstr.=" (`". implode("`,`", array_keys($assoc_arr)) ."`) VALUES" ;
+			    $insertstr.=" (". implode(",", array_values($assoc_arr)) .");" ;
+			    
+			    $q = db_query($insertstr);
+		   	
+		   	if($ret){
+		   		return mysql_insert_id();
+		   	}
+		        
+		}
+		
+		// =========== 
+		// ! Insert record to the database with delay   
+		// =========== 
+			
+		function insert_delayed($table, $assoc_arr){
+		    foreach($assoc_arr as $k=>$v)
+		        $assoc_arr[$k] = mes($v);
+		
+		    $insertstr="INSERT DELAYED INTO `".$table."`";
+		    $insertstr.=" (`". implode("`,`", array_keys($assoc_arr)) ."`) VALUES" ;
+		    $insertstr.=" (". implode(",", array_values($assoc_arr)) .");" ;
+		    
+		    db_query($insertstr);
+		}		 
 	
 	}
 		
