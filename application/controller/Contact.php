@@ -10,38 +10,20 @@
 		}
 		
 		function index(){
-				
-			$this->load->model('special/mate');
-			$this->mate->makeMe();
 			
+			$this->load->helper('form');
 			
-			$data = array("name"=>"dave");
+			$this->load->view('contact');
 			
+			echo 'hey dude';
 			
-			$this->load->view('header',$data);
-			$this->load->view("contact");
-			
-			$this->db->connectDefault();
-			
-			$this->themes->render("header",array("name"=>"DavE"));
-			
-			if($this->db->query("select category from categories where category='Membership'")->row()){}
-			
-			
+			//$this->load->view('contact');
 			
 					
 			//$this->load->view("shop/test");
 		
 		}
 
-		
-/*
-		function index(){
-			
-			echo '<Br>index';
-		
-		}
-*/
 		
 		function submit($string=false){
 			

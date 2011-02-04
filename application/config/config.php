@@ -4,12 +4,33 @@
 
 	# Some file to basically setup all of the basic variables.
 	
-	
 	// =========== 
 	// ! Version   
 	// =========== 
 	
 	define('FURY_VERSION',	'1.0.0');
+	
+	// =========== 
+	// ! Base site URL
+	// ! Typically this would be your base URL with a trailing slash
+	// ! example http://website.com/ 	   
+	// =========== 
+	
+	$config['base_url'] = "http://localhost:8888/Fury-PHP/";
+	
+	// =========== 
+	// ! Assets folder location   
+	// =========== 
+	
+	$config['assets_url'] = "assets/";
+	
+	// =========== 
+	// ! Index page
+	// This would typically be the index.php file, or whatever it is the name of your route controller.
+	// If you are mod_rew_writing this out of your URLS leave it blank.   
+	// =========== 
+	
+	$config['index_page'] = "";
 	
 	// =========== 
 	// ! Auto load libraries
@@ -90,7 +111,7 @@
 	// ! Add a suffix to all the FURY generated urls  
 	// =========== 
 	
-	$config['url_suffix'] = ".php";
+	$config['url_suffix'] = "";
 	
 	// =========== 
 	// ! Enable query strings? 	

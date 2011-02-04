@@ -154,6 +154,38 @@
 		
 		
 		// =========== 
+		// ! Load a helper file to be used particuarly in views etc   
+		// =========== 
+		
+		function helper($helpers = array()){
+			if ( ! is_array($helpers)){
+				$helpers = array($helpers);
+			}
+		
+			foreach ($helpers as $helper){		
+				$helper = strtolower(str_replace(EXT, '', str_replace('_helper', '', $helper)).'_helper');
+	
+				if (isset($this->_fury_helpers[$helper])){
+					continue;
+				}
+				
+				# Allow inclusion of application specific helpers and core helpers.
+								
+				if (file_exists(APP_PATH.'helpers/'.$helper.EXT)){ 
+					include_once(APP_PATH.'helpers/'.$helper.EXT);
+				}else{		
+					if (file_exists(ROOT. SYS. 'helpers/'.$helper.EXT)){
+						include_once(ROOT. SYS. 'helpers/'.$helper.EXT);
+					}else{
+						show_error('Unable to load the requested file: helpers/'.$helper.EXT);
+					}
+				}
+	
+				$this->_fury_helpers[$helper] = TRUE;
+			}		
+		}		
+		
+		// =========== 
 		// ! Load variables to use in the controller class   
 		// =========== 
 		
