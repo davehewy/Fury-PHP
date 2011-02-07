@@ -233,6 +233,13 @@
 		
 		}
 		
+		// =========== 
+		// ! Any number, upper or lower case lettering
+		// =========== 
+		
+		function alpha_numeric_tight(){
+			return ( ! preg_match("/^([a-zA-Z0-9])+$/i", $str)) ? FALSE : TRUE;
+		}
 		
 		// =========== 
 		// ! Alpha   
