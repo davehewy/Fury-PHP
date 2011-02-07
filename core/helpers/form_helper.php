@@ -40,6 +40,33 @@
 	}
 	
 	// =========== 
+	// ! Error box presets   
+	// =========== 
+	
+	if( ! function_exists('errorbox')){
+	
+		function errorbox($msg,$class=false){
+			$class = (!$class) ? "errorbox" : $class;
+			echo '<div class="'.$class.'"></div>';
+		}
+	
+	}
+	
+	// =========== 
+	// ! Success box presets   
+	// =========== 
+	
+	if( ! function_exists('successbox')){
+	
+		function errorbox($msg,$class=false){
+			$class = (!$class) ? "errorbox" : $class;
+			echo '<div class="'.$class.'"></div>';
+		}
+	
+	}
+	
+	
+	// =========== 
 	// ! Sets a value to the value  
 	// =========== 
 	

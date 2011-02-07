@@ -32,8 +32,10 @@
 		function submit($string=false){
 		
 		
+/*
 		$this->load->library('Utilities');
 		echo $this->utilities->generateToken(40);
+*/
 			
 /*
 			$this->load->library('Mail');
