@@ -82,29 +82,32 @@
 	// * as found in either core system files or your own apps library? 
 	// =========== 
 	
-	// Available core apps are Postmark, Postmark_Zend (postmark but using zend for delivering help)
+	// Available core apps are postmark, postmark_zend (postmark but using zend for delivering help)
 	
-	$config['email_app'] = "postmark";
+	$config['email_app'] = "postmark_zend";
 	
 	// =========== 
 	// ! If you are using Zend in any part of this application please define your include path   
 	// =========== 
 	
-	$config['local_include'] = "/usr/lib/php/libraries/zend-framework-1.11.2/";
+	$config['zend_local_include'] = "/usr/lib/php/libraries/zend-framework-1.11.2/";
 	$config['remote_include'] = "/";
 	
 	// =========== 
 	// ! Configure API Keys. Require by the likes of Postmark or what not.
 	// =========== 
 	
-	$config['apikey'][$config['email_app']] = '9bf3b3f-4109-4bb9-8e71-3ba43aa54fa7';
+	$config['apikey'][$config['email_app']] = 'a9bf3b3f-4109-4bb9-8e71-3ba43aa54fa7';
 	
 	
 	// =========== 
-	// ! Default webmaster address to send mail from unless otherwise overwritten will be used.     
+	// ! EMAIL Default Settings    
 	// =========== 	
 	
 	$config['webmaster_email'] = 'webmaster@street-crime.com';
+	$config['webmaster_sendfrom'] = 'Street Crime Mmorpg Game';
+	$config['reply_to_email'] = 'feedback@street-crime.com';
+	$config['reply_to_name'] = 'Street Crime Feedback';
 	
 	// =========== 
 	// ! Basic routing   

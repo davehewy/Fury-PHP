@@ -4,13 +4,8 @@
 
 	# FURY Supports direct integration of Postmark with both a addon for zend mail or alternatively just using the plain call.
 	
-	set_include_path(
-	get_include_path().PATH_SEPARATOR.
-	$zendvar);
-	require_once 'Zend/Mail.php';
-	require_once 'Zend/Mail/Transport/Smtp.php';
 	
-	class FURY_Postmark_Zend{
+	class FURY_Postmark_Zend extends Zend_Mail_Transport_Abstract{
 		
 		private $_apiKey = '';
 		private $_e_from = '';
@@ -22,11 +17,15 @@
 	     */		
 	
 		function FURY_Postmark_Zend(){
+			
+			Zend_Mail::setDefaultTransport($this);
 				
 			$this->core =& load_class('Core');
 			
-			$apiKey = $this->core->get_config_item('postmark','apikey');
+			$apiKey = $this->core->get_config_item('postmark_zend','apikey');
 			$_e_from = $this->core->get_config_item('webmaster_email');
+			
+			echo $apiKey.'<br><br>'.$_e_from.'<br><br>';
 						
 			
 	        if ( empty( $apiKey ) ) {
@@ -35,14 +34,10 @@
 	        
 	        $this->_apiKey = $apiKey;
 	        
-	        $this->_include_zend();
 		
 		}
 
-		function
-	    
-	    public function _sendMail()
-	    {
+	    public function _sendMail(){
 	        // Retrieve the headers and appropriate keys we need to construct our mail
 	        $headers = $this->_mail->getHeaders();
 	        
@@ -155,5 +150,6 @@
 	        if ( $response->getStatus() != 200 ) {
 	            throw new Exception( 'Mail not sent - Postmark returned ' . $response->getStatus() . ' - ' . $response->getMessage() );
 	        }
-	    }
+	    }	
+	
 	}
