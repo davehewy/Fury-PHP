@@ -59,7 +59,7 @@
 	if( ! function_exists('successbox')){
 	
 		function successbox($msg,$class=false){
-			$class = (!$class) ? "errorbox" : $class;
+			$class = (!$class) ? "successbox" : $class;
 			echo '<div class="'.$class.'"></div>';
 		}
 	
