@@ -47,7 +47,7 @@
 	
 		function errorbox($msg,$class=false){
 			$class = (!$class) ? "errorbox" : $class;
-			echo '<div class="'.$class.'"></div>';
+			echo '<div class="'.$class.'">'.$msg.'</div>';
 		}
 	
 	}
@@ -60,7 +60,7 @@
 	
 		function successbox($msg,$class=false){
 			$class = (!$class) ? "successbox" : $class;
-			echo '<div class="'.$class.'"></div>';
+			echo '<div class="'.$class.'">'.$msg.'</div>';
 		}
 	
 	}
