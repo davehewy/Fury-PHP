@@ -90,7 +90,7 @@
 	
 	// Does this app require 
 	
-	$config['antiscript'] = '
+	$config['antiscript'] = '';
 	
 	// =========== 
 	// ! Email delivering, do you want to use a defined client library
