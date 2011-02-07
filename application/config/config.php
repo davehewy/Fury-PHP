@@ -11,6 +11,13 @@
 	define('FURY_VERSION',	'1.0.0');
 	
 	// =========== 
+	// ! Your application details   
+	// =========== 
+	
+	$config['application']['version'] = '1.0.0';
+	$config['application']['name'] = 'Street Crime';
+	
+	// =========== 
 	// ! Base site URL
 	// ! Typically this would be your base URL with a trailing slash
 	// ! example http://website.com/ 	   
@@ -103,7 +110,7 @@
 	// =========== 
 	// ! EMAIL Default Settings    
 	// =========== 	
-	
+	$config['default_system_email'] = 'bytewire@bytewire.co.uk';
 	$config['webmaster_email'] = 'webmaster@street-crime.com';
 	$config['webmaster_sendfrom'] = 'Street Crime Mmorpg Game';
 	$config['reply_to_email'] = 'feedback@street-crime.com';

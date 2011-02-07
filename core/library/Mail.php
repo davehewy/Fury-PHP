@@ -3,7 +3,8 @@
 	if ( ! defined('ROOT')) exit('No direct script access allowed');	
 	
 	class FURY_Mail{
-	
+		
+		var $_default_system_email;
 		var $_from_email;
 		var $_from_name;
 		var $_replyto_email;
@@ -15,6 +16,7 @@
 		var $_html_body;
 		
 		var $library;
+		var $system = null;
 		
 		var $var_array = array();
 		var $send_errors = array();
@@ -40,7 +42,7 @@
 		
 		
 		function set_defaults(){
-				
+			$this->_default_system_email = ( ! $this->core->get_config_item("default_system_email")) ? FALSE : $this->core->get_config_item('default_system_email');
 			$this->_from_email = ( ! $this->core->get_config_item("webmaster_email")) ? FALSE : $this->core->get_config_item('webmaster_email');
 			$this->_from_name = ( ! $this->core->get_config_item("webmaster_sendfrom")) ? FALSE : $this->core->get_config_item('webmaster_sendfrom');
 			$this->_replyto_email = (! $this->core->get_config_item("reply_to_email")) ? FALSE : $this->core->get_config_item('reply_to_email');
@@ -80,8 +82,13 @@
 		
 		}
 		
-		function setTo($email,$name){
+		function setTo($email,$name=false){
 			$this->_send_to = $email;
+			$this->_send_to_name = $name;
+			return $this;
+		}
+		
+		function setToName($name){
 			$this->_send_to_name = $name;
 			return $this;
 		}
@@ -98,6 +105,11 @@
 		
 		function setHtml($html){
 			$this->_html_body = $html;
+			return $this;
+		}
+		
+		function setSystem(){
+			$this->system = true;
 			return $this;
 		}
 		
@@ -153,6 +165,10 @@
 		
 		function send(){
 		
+			if($this->system){
+				$this->setTo($this->_default_system_email);
+			}
+			
 			// Check for certain fields before sending
 			if($this->checkFields()){
 

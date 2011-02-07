@@ -31,10 +31,11 @@
 			
 			$this->load->library('Mail');
 			$this->mail
-				->setTo("dave@bytewire.co.uk","David Heward")
+				->setToName("Contact Form")
 				->setSubject("Some subject")
 				->setPlain("This is some plain text")
 				->setHtml("<b>Goody string</b> i cant be bothered to watch lol.")
+				->setSystem()
 				->send();
 			
 /*
