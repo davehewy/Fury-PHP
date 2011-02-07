@@ -1,5 +1,6 @@
 <?php
 
+if ( ! defined('ROOT')) exit('No direct script access allowed');
 /**
  * Project:     Securimage: A PHP class for creating and managing form CAPTCHA images<br />
  * File:        securimage.php<br />
@@ -79,7 +80,7 @@
 	 * @subpackage classes
 	 *
 	 */
-
+	
 
 	class FURY_Securimage{
 	
@@ -152,7 +153,7 @@
 	   *
 	   * @var mixed
 	   */
-	  var $gd_font_file = 'gdfonts/bubblebath.gdf';
+	  var $gd_font_file = 'assets/font/gdfonts/bubblebath.gdf';
 	
 	  /**
 	   * The approximate size of the font in pixels.<br />
@@ -170,7 +171,7 @@
 	   *
 	   * @var string
 	   */
-	  var $ttf_file = "./elephant.ttf";
+	  var $ttf_file = "assets/fonts/elephant.ttf";
 	
 	  /**
 	   * The font size.<br />
@@ -657,7 +658,7 @@
 	            $font_color = imagecolorallocate($this->im, "0x$r", "0x$g", "0x$b");
 	          }
 	        }
-	        imagettftext($this->im, $this->font_size, $angle, $x, $y, $font_color, $this->ttf_file, $this->code{$i});
+	        imagettftext($this->im, $this->font_size, $angle, $x, $y, $font_color, ROOT . $this->ttf_file, $this->code{$i});
 	
 	        $x += rand($this->text_minimum_distance, $this->text_maximum_distance);
 	      } //for loop
