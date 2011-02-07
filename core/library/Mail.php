@@ -172,7 +172,8 @@
 					$this->setTo($this->_default_system_email);
 				}else{
 					if($this->_default_system_name && !$this->_send_to_name){
-					$this->setTo($this->_default_system_email,$this->_default_system_name);
+						$this->setTo($this->_default_system_email,$this->_default_system_name);
+					}
 				}
 			}
 			
