@@ -24,9 +24,7 @@
 			
 			$apiKey = $this->core->get_config_item('postmark_zend','apikey');
 			$_e_from = $this->core->get_config_item('webmaster_email');
-			
-			echo $apiKey.'<br><br>'.$_e_from.'<br><br>';
-						
+									
 			
 	        if ( empty( $apiKey ) ) {
 	            throw new Exception( __CLASS__ . ' must be instantiated with a API key' );
