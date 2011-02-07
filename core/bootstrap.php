@@ -131,14 +131,14 @@
 	$method = $ROUTE->fetch_method();
 
 	
-if ( ! class_exists($class)
-	OR $method == 'controller'
-	OR strncmp($method, '_', 1) == 0
-	OR in_array(strtolower($method), array_map('strtolower', get_class_methods('Controller')))
-	)
-{
-	show_404("{$class}/{$method}");
-}
+	if ( ! class_exists($class)
+		OR $method == 'controller'
+		OR strncmp($method, '_', 1) == 0
+		OR in_array(strtolower($method), array_map('strtolower', get_class_methods('Controller')))
+		)
+	{
+		show_404("{$class}/{$method}");
+	}
 	
 	$FURY = new $class();
 	
@@ -150,10 +150,24 @@ if ( ! class_exists($class)
 		// methods, so we'll use this workaround for consistent behavior
 		if ( ! in_array(strtolower($method), array_map('strtolower', get_class_methods($FURY))))
 		{
-			show_404("{$class}/{$method}");
+			
+			# Okay so we know the URI might not be valid but 
+			# lets check if the index is expecting extra params
+			
+			$r = new ReflectionMethod('Contact', 'index');
+			$params = $r->getParameters();
+			if(count($params)>0){
+				$URI->rsegments[] = $method;
+				$method = 'index';
+			}else{
+				show_404("{$class}/{$method}");
+			}			
+			
+			
 		}
 
 		// Call the requested method.
+		
 		// Any URI segments present (besides the class/function) will be passed to the method for convenience
 		call_user_func_array(array(&$FURY, $method), array_slice($URI->rsegments, 2));
 		

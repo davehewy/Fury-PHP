@@ -13,11 +13,13 @@
 		
 		function index(){
 			
+			echo $email;
+			
 			$this->load->helper('form');
 			
 			$this->load->view('contact');
 			
-			echo 'hey dude';
+		
 			
 			//$this->load->view('contact');
 			
@@ -28,7 +30,10 @@
 
 		
 		function submit($string=false){
+		
+		echo $string;
 			
+/*
 			$this->load->library('Mail');
 			$this->mail
 				->setToName("Contact Form")
@@ -37,6 +42,7 @@
 				->setHtml("<b>Goody string</b> i cant be bothered to watch lol.")
 				->setSystem()
 				->send();
+*/
 			
 /*
 			$this->load->model('postmark');
@@ -50,7 +56,6 @@
 			
 			$this->load->view('contact');
 		
-			echo '<br><Br>Im trying to submit my contact form';
 			
 			//echo $this->model;
 		
