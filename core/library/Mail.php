@@ -5,6 +5,7 @@
 	class FURY_Mail{
 		
 		var $_default_system_email;
+		var $_default_system_name;
 		var $_from_email;
 		var $_from_name;
 		var $_replyto_email;
@@ -43,6 +44,7 @@
 		
 		function set_defaults(){
 			$this->_default_system_email = ( ! $this->core->get_config_item("default_system_email")) ? FALSE : $this->core->get_config_item('default_system_email');
+			$this->_default_system_name = ( ! $this->core->get_config_item("default_system_name")) ? FALSE : $this->core->get_config_item('default_system_name');
 			$this->_from_email = ( ! $this->core->get_config_item("webmaster_email")) ? FALSE : $this->core->get_config_item('webmaster_email');
 			$this->_from_name = ( ! $this->core->get_config_item("webmaster_sendfrom")) ? FALSE : $this->core->get_config_item('webmaster_sendfrom');
 			$this->_replyto_email = (! $this->core->get_config_item("reply_to_email")) ? FALSE : $this->core->get_config_item('reply_to_email');
@@ -166,7 +168,12 @@
 		function send(){
 		
 			if($this->system){
-				$this->setTo($this->_default_system_email);
+				if(!$this->_default_system_name){
+					$this->setTo($this->_default_system_email);
+				}else{
+					if($this->_default_system_name && !$this->_send_to_name){
+					$this->setTo($this->_default_system_email,$this->_default_system_name);
+				}
 			}
 			
 			// Check for certain fields before sending
