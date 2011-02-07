@@ -85,6 +85,12 @@
 	$config['auto_db_connect'] = TRUE;	
 	
 	// =========== 
+	// ! Antiscript config   
+	// =========== 
+	
+	// Does this app require 
+	
+	// =========== 
 	// ! Email delivering, do you want to use a defined client library
 	// * as found in either core system files or your own apps library? 
 	// =========== 
