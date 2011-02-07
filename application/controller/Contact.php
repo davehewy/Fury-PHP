@@ -11,9 +11,9 @@
 									
 		}
 		
-		function index(){
+		function index($email,$code){
 			
-			echo $email;
+			print_r(func_get_args());
 			
 			$this->load->helper('form');
 			

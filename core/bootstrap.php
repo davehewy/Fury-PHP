@@ -154,15 +154,8 @@
 			# Okay so we know the URI might not be valid but 
 			# lets check if the index is expecting extra params
 			
-			$r = new ReflectionMethod('Contact', 'index');
-			$params = $r->getParameters();
-			if(count($params)>0){
-				$URI->rsegments[] = $method;
-				$method = 'index';
-			}else{
-				show_404("{$class}/{$method}");
-			}			
-			
+			show_404("{$class}/{$method}");
+					
 			
 		}
 
