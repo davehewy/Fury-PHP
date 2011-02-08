@@ -10,6 +10,7 @@
 	
 		function Fury_Validation(){
 			$this->FURY =& get_instance();
+			$this->core =& load_class('Core');
 			$this->load =& load_class("Loader");
 		}
 		
