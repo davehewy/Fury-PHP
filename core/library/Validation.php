@@ -70,11 +70,22 @@
 		
 		// =========== 
 		// ! function character name checker   
+		// check characters, profanity, filter, 3-15 characters long.
 		// =========== 
 		
-		
-		
-		
+		function characterName($str){
+		$this->load->library("Profanity");
+			if(preg_match("/^[a-zA-Z0-9_|-\s]{3,16}$/", $str)){
+				if($this->profanity->getScore($str)<=0){
+					return true;
+				}else{
+					$this->_fury_error_string = gettext("Your username contains words which we do not allow as a username, try changing it to something else!");
+				}
+			}else{
+				$this->_fury_error_string = gettext("The username is invalid it may only contain letters, numbers, spaces, -_| and must be between 3 and 15 characters in length.");
+			}
+		}
+       
 		// =========== 
 		// ! Validate a url   
 		// =========== 
@@ -334,7 +345,15 @@
 		function valid_base64($str){
 			return (bool) ! preg_match('/[^a-zA-Z0-9\/\+=]/', $str);
 		}		
-
+		
+		
+		// =========== 
+		// ! Return a single error   
+		// =========== 
+	
+		function retErrors(){
+			return $this->_fury_error_string;
+		}
 	
 	}
 		
