@@ -31,11 +31,15 @@
 		
 		function submit($string=false){
 		
-		$this->load->library('Profanity');
+		$this->load->library('Validation');
 		
-		$str = "Cock ass grass wanker fest";
+		$name = 'wankerpoo';
 		
-		echo $this->profanity->strip($str);
+		if($this->validation->characterName($name)){
+			echo 'its okay';
+		}else{
+			echo 'nope';
+		}
 		
 		
 /*

@@ -8,10 +8,9 @@
 		var $_fury_error_string = '';
 		var $_fury_error_array = array();
 	
-		function Fury_Validation(){
+		function FURY_Validation(){
 			$this->FURY =& get_instance();
-			$this->core =& load_class('Core');
-			$this->load =& load_class("Loader");
+			$this->FURY->load->library('Profanity');
 		}
 		
 		// =========== 
@@ -76,9 +75,9 @@
 		// =========== 
 		
 		function characterName($str){
-		$this->load->library("Profanity");
+		$this->FURY->load->library('Profanity');
 			if(preg_match("/^[a-zA-Z0-9_|-\s]{3,16}$/", $str)){
-				if($this->profanity->getScoring($str)<=0){
+				if($this->FURY->profanity->getScoring($str)<=0){
 					return true;
 				}else{
 					$this->_fury_error_string = gettext("Your username contains words which we do not allow as a username, try changing it to something else!");
@@ -86,7 +85,9 @@
 			}else{
 				$this->_fury_error_string = gettext("The username is invalid it may only contain letters, numbers, spaces, -_| and must be between 3 and 15 characters in length.");
 			}
+			return false;
 		}
+       
        
 		// =========== 
 		// ! Validate a url   

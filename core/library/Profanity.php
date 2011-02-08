@@ -10,7 +10,7 @@
 	var $wordList;
 	var $replaceList;
 
-    function __construct() {
+    function FURY_Profanity() {
         // compile list of words with typography variations
         $this->_setWordList();
     }
