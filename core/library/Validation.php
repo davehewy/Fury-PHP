@@ -78,7 +78,7 @@
 		function characterName($str){
 		$this->load->library("Profanity");
 			if(preg_match("/^[a-zA-Z0-9_|-\s]{3,16}$/", $str)){
-				if($this->profanity->getScore($str)<=0){
+				if($this->profanity->getScoring($str)<=0){
 					return true;
 				}else{
 					$this->_fury_error_string = gettext("Your username contains words which we do not allow as a username, try changing it to something else!");
