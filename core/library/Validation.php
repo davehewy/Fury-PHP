@@ -68,6 +68,12 @@
 			}
 		}
 		
+		// =========== 
+		// ! function character name checker   
+		// =========== 
+		
+		
+		
 		
 		// =========== 
 		// ! Validate a url   
