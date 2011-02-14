@@ -29,9 +29,12 @@
     
     function strip($string){
     	$this->_setReplaceList();
-     	$retString = preg_replace_callback($this->replaceList,'self::strip_replace', $string);
+    	$retString = preg_replace('/(?<=\A|[^A-Za-z0-9_])(' . implode('|', $replace) . ')(?=\Z|[^A-Za-z0-9_])/ie', "str_repeat('*', strlen($1))", $string);
+     	 preg_replace_callback($this->replaceList,'self::strip_replace', $string);
     	return $retString;
     }
+    
+    
     
     
     /*

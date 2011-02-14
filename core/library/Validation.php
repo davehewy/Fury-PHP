@@ -87,6 +87,21 @@
 			}
 			return false;
 		}
+		
+		
+		// =========== 
+		// ! function to check if a username is valid.   
+		// =========== 
+		
+		function userName($str){
+			
+			if(preg_match("/^[a-zA-Z0-9_|-\s]{3,16}$/", $str)){
+				return true;
+			}
+			
+			return false;
+		}
+		
        
        
 		// =========== 
