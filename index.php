@@ -4,7 +4,7 @@
 	
 	define('EXT', '.php');
 	define('DS', DIRECTORY_SEPARATOR);
-	define('ROOT', dirname(dirname(__FILE__)).'/Fury-PHP/');
+	define('ROOT', dirname(dirname(__FILE__)).'/scshop/');
 	define('SYS', 'core/');
 	
 		

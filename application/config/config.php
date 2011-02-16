@@ -23,13 +23,13 @@
 	// ! example http://website.com/ 	   
 	// =========== 
 	
-	$config['base_url'] = "http://localhost:8888/Fury-PHP/";
+	$config['base_url'] = "http://localhost:8888/scshop/";
 	
 	// =========== 
 	// ! Assets folder location   
 	// =========== 
 	
-	$config['assets_url'] = "assets/";
+	$config['assets_url'] = "/scshop/assets/";
 	
 	// =========== 
 	// ! Index page
@@ -43,7 +43,7 @@
 	// ! Auto load libraries
 	// =========== 
 	
-	$config['auto_load'] = array("db");
+	$config['auto_load'] = array("db","session");
 	
 	// =========== 
 	// ! Auto load models   
@@ -174,7 +174,7 @@
 	// ! Default Controller   
 	// =========== 
 	
-	$config['routes']['default_controller'] = "home/login";
+	$config['routes']['default_controller'] = "buy/credits";
 	
 	// =========== 
 	// ! Turn on and off Templating   

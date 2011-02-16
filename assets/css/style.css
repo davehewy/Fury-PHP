@@ -1,0 +1,571 @@
+
+
+/*RESETS*/
+
+* {margin:0;padding:0;} 
+
+body{font:normal normal 13px/18px Helvetica,Arial,Verdana,sans-serif;text-shadow:0 0 1px rgba(0,0,0,0.01);height: 100%;}
+select,input,button,textarea{font:99% arial,helvetica,clean,sans-serif;}
+table{font-size:inherit;font:100%;}
+pre,code,kbd,samp,tt{font-family:monospace;*font-size:108%;line-height:100%;}
+
+html{color:#000;height:100%;}
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,code,form,fieldset,legend,input,textarea,p,blockquote,th,td{margin:0;padding:0;}
+table{border-collapse:collapse;border-spacing:0;}
+fieldset,img{border:0;}
+address,caption,cite,code,dfn,em,strong,th,var{font-style:normal;font-weight:normal;}
+li{list-style:none;}
+caption,th{text-align:left;}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal;}
+q:before,q:after{content:'';}
+abbr,acronym{border:0;font-variant:normal;}
+sup{vertical-align:text-top;}
+sub{vertical-align:text-bottom;}
+input,textarea,select{font-family:inherit;font-size:inherit;font-weight:inherit;}
+input,textarea,select{*font-size:100%;}
+legend{color:#000;}
+em{font-style: italic;}
+
+
+/* FONTS */
+
+@font-face {
+	font-family: 'HamburgerHeavenRegular';
+	src: url('http://localhost:8888/scshop/system/fonts/HAMBH___-webfont.eot');
+	src: local(':)'), url('http://localhost:8888/scshop/system/fonts/HAMBH___-webfont.woff') format('woff'), url('http://localhost:8888/scshop/system/fonts/HAMBH___-webfont.ttf') format('truetype'), url('http://localhost:8888/scshop/system/fonts/HAMBH___-webfont.svg#webfontAbJy1Wr7') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'StreetwisebuddyRegular';
+	src: url('http://localhost:8888/scshop/system/fonts/StreetwiseBuddy-webfont.eot');
+	src: local('☺'), url('http://localhost:8888/scshop/system/fonts/StreetwiseBuddy-webfont.woff') format('woff'), url('http://localhost:8888/scshop/system/fonts/StreetwiseBuddy-webfont.ttf') format('truetype'), url('http://localhost:8888/scshop/system/fonts/StreetwiseBuddy-webfont.svg#webfontm2NLtBmz') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+@font-face {
+	font-family: 'PincoyablackBlack';
+	src: url('http://localhost:8888/scshop/system/fonts/pincoyablack-webfont.eot');
+	src: local('☺'), url('http://localhost:8888/scshop/system/fonts/pincoyablack-webfont.woff') format('woff'), url('http://localhost:8888/scshop/system/fonts/pincoyablack-webfont.ttf') format('truetype'), url('http://localhost:8888/scshop/system/fonts/pincoyablack-webfont.svg#webfontOHYe7C3E') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+body{
+	background: url(../images/bg.jpg) repeat;
+	color:#ccc;
+	text-shadow:0 0 1px rgba(0,0,0,0.01);	
+}
+
+p{
+	margin:10px 0px 0px 0px;
+}
+
+p.para{
+	margin: 10px 0px;
+}
+
+a{
+ 	outline:none;
+    color:#b03232;
+	text-decoration: none;
+}
+
+a:hover{
+	text-decoration: underline;
+}
+
+#wrapper{
+	margin: 0px auto;
+	width:1024px;
+	background: #222222;
+	border-left:2px solid #000;
+	border-right:2px solid #000;
+}
+
+#main_div{
+	padding:0px 0px;
+}
+
+#header{
+	position: relative;
+	height:97px;
+	background: black url(../images/header_repeat.png);
+	background-repeat: repeat-x;	
+}
+
+#character{
+	position: absolute;
+	left:8px;
+	top:3px;
+}
+
+#characters{
+	position: absolute;
+	right:10px;
+	top:5px;
+}
+
+#logo{
+	position: absolute;
+	top:5px;
+	left:65px;
+}
+
+#navs_topright{
+	position: absolute;
+	top:3px;
+	right:10px;
+}
+
+#slogan{
+	position: absolute;
+	top:42px;
+	left:70px;
+	color:#fff;
+}
+
+#footer{
+	background: #333333;
+	padding: 10px 10px 10px 10px;
+	border-top:1px solid #000;
+	overflow: hidden;
+}
+
+#footer-navis{
+	padding-left:30px;
+}
+
+#footer ul{
+	margin-top:10px;
+	margin-bottom:10px;
+	float: left;
+}
+
+#footer ul span{
+	display: block;
+	color:#fff;
+	font-weight:bold;
+	padding: 0px 0px 5px 0px;
+	font-size:116%;
+}
+
+#footer ul li{
+	margin:0;
+	padding: 0px 0px 3px 0px;
+}
+
+#menu{
+	padding: 0px 0px;
+	background: #000;
+	overflow: hidden;
+	border-bottom:1px solid #333;
+}
+
+#menu ul{
+	margin: 0px auto;
+	width: 1000px;
+}
+
+#menu ul li:hover{
+	background-color:#222;
+}
+
+#menu ul li{
+	margin: 0;
+	padding: 0;
+	float:left;
+}
+
+#menu ul li.no-border{
+	border-right: none;
+}
+
+#menu ul li a{
+	display: block;
+	padding: 10px 18px;
+	color:#fff;
+	font-size: 13px;
+	letter-spacing: 1px;
+}
+
+#menu ul li a:hover{
+	text-decoration: none;
+}
+
+#content{
+	padding:0px 10px 10px 10px;
+	font-size:93%;
+}
+
+#navi{
+	padding: 10px 0px 0px 0px;
+}
+
+.breaker{
+	margin: 10px 0px 10px 0px;
+	padding:5px 10px;
+	background: #333;
+	border:1px solid black;
+	font-size:123.1%;
+}
+
+
+/*****Titles*******/
+h1{
+	font-size: 20px;
+	text-shadow: #222 2px 2px 1px;
+	letter-spacing: 1px;
+	color:#fff;
+	margin: 15px 0px;
+}
+
+
+h2{
+	font-size: 16px;
+	text-shadow: #333 2px 2px 1px;
+	letter-spacing: 1px;
+	color:#e50000;
+	margin: 15px 0px;
+}
+
+
+h1.logo{
+	font: 400% 'PincoyablackBlack', Arial, sans-serif;
+	letter-spacing: 2;
+	color:#000;
+	margin: 15px 0px;
+	
+}
+
+h1.headline{
+	font-size: 20px;
+	color:#fff;
+	margin: 15px 0px;
+	padding: 7px 0px;
+	background: maroon;
+	border-top: 1px solid #000;
+	border-bottom: 2px solid #000;
+}
+
+
+h2.display{
+	color:#ccc;
+}
+
+h4{
+	font-size: 123.1%;
+	font-weight:bold;
+	margin: 10px 0px;
+}
+
+/******Utilities******/
+.ovfl{overflow: hidden;}
+.clear{clear:both;}
+.fullwidth{width:1000px;}
+.halffull{width:499px;}
+.halffulldivs{width:488px;}
+.threequarters{width:750px;}
+.halfthreequarters{ width:325px;}
+.marg-left10{margin-left:10px;}
+.marg-left50{margin-left:50px;}
+.marg-right16{margin-right:16px;}
+.marg-right20{margin-right:20px;}
+.marg-bottom20{margin-bottom:20px;}
+.third{width:330px;}
+.quarter{width:249px;}
+.fl{float:left;}
+.fr{float:right;}
+.centrediv{margin:0px auto;}
+.sixsix{background: maroon;}
+.threethree{background: #333333;}
+.pad10{padding:10px 0px;}
+.pad20top{padding-top:20px;}
+.pad10top{padding-top:10px;}
+.pad10bottom{padding-bottom:10px;}
+.tablemargintop{ margin-top:10px;}
+.layoutmargin{margin: 15px 0px 30px 0px;}
+select.scshop{ padding: 2px 10px 0px 2px;}
+select.scshop option{padding: 1px 0px;}
+label.largetext{font-size: 16px;text-shadow: #222 2px 2px 1px; letter-spacing: 0px;color:#ccc;margin: 0px 0px;}
+label.largertext{font-size: 18px;text-shadow: #222 2px 2px 1px; letter-spacing: 0px;color:#ccc;margin: 0px 0px;}
+p.largegreen{color:#64bf75;font-size: 16px;text-shadow: #222 2px 2px 1px; letter-spacing: 0px;margin: 0px 0px;}
+
+
+
+
+span.pink{color:pink;}
+
+/******PRODUCTS*****/
+.prodtype{
+	text-align: center;
+	border-right:1px solid black;
+	padding: 0px 0px 10px 0px;
+}
+
+.prodtype-home{
+	float:left;
+	background: #333;
+	border:1px solid black;
+	box-shadow: 2px 2px 3px #000;
+}
+
+.prodtype-home-inner{
+	overflow: hidden;
+	padding: 0px 10px 10px 10px;
+}
+
+.product-wrapper{
+	position: relative;
+	float:left;	
+	width:250px;
+	padding: 0px 5px;
+}
+
+.product{
+	width:217px;
+	overflow: hidden;
+ 	border:1px solid black;	
+	background: #333;
+	padding: 45px 10px 10px 10px;
+}
+
+.product-banner{
+	position: absolute;
+	top:0;
+	left: 0;
+	background: url(../images/banner.png) no-repeat;
+	height:22px;
+	width:250px;
+	text-align: center;
+	padding: 8px 0px;
+	color:#fff;
+	font-weight:bold;
+	font-size:116%;
+}
+
+.product-price{
+	float:right;
+	color:#fff;
+	font-weight:bold;
+}
+
+.product-description{
+	width:250px;
+	padding: 0px 0px 10px 0px;
+}
+
+.error{
+	background: #333333;
+	border: 1px solid maroon;
+	margin: 10px 0px;
+	padding: 10px 10px;
+	color: #fff;
+	font-weight:bold;
+}
+
+/*****TABLES*******/
+table.pay{
+	border-collapse: separate;
+	border-spacing: 5px 5px;
+}
+
+table.login_popup{
+	margin: 20px auto;
+	padding:0px;
+	width:400px;
+	border-collapse: separate;
+	border-spacing: 10px 10px;
+}
+
+table.login{
+	margin: 20px auto;
+	padding:0px;
+	width:400px;
+	border-collapse: separate;
+	border-spacing: 10px 10px;
+}
+
+/******INPUTS******/
+input.text{
+	background-color:#444;
+	border: 1px solid #111;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	color: #cccccc;
+	font-size: 13px;
+	padding: 5px;
+	text-shadow: #222 0px 0px 1px;
+	width: 98%;
+}
+
+input.textalt{
+	background-color:#222;
+	border: 1px solid #111;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	color: #cccccc;
+	font-size: 15px;
+	padding: 7px;
+	text-shadow: #000 0px 0px 1px;
+	width: 98%;
+}
+
+
+input.pincode{
+	background-color:#444;
+	border: 1px solid #111;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-left-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-bottom-right-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-left-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	border-top-right-radius: 3px 3px;
+	color: #cccccc;
+	font-size: 13px;
+	padding: 5px;
+	text-shadow: #222 0px 0px 1px;
+	width: 33px;
+
+}
+input.textlong{
+	padding: 3px;
+	background: #444444;
+	border: 1px solid #000;
+	color:#ccc;
+	width:200px;
+}
+
+input.black{
+	background:url(http://street-crime.com/images/attack/black_button.png) no-repeat;
+	width:106px;
+	height:23px;
+	text-align: center;
+	border: 0px solid black;
+	outline: none;
+	color:#fff;
+	font-size:12px;
+	cursor:pointer;
+}
+
+input.black:hover{
+	background:url(http://street-crime.com/images/attack/black_button_over.png) no-repeat;
+}
+
+input.bigblack{
+	width:252px;height:40px;background:url(http://street-crime.com/images/membership/button5.png) no-repeat; cursor:pointer; border:none;
+}
+
+a.blackbutton{
+	background:url(http://street-crime.com/images/attack/black_button.png) no-repeat;
+	color:#fff;
+	font-size: 1em;
+	display: block;
+	float:left;
+	width: 111px;
+	margin-right:6px;
+	height:26px;
+	text-decoration: none;
+	text-align: center;
+}
+
+a.blackbutton span{
+    display: block;
+    line-height: 14px;
+    padding: 4px 0px 4px 0px;
+}
+
+a.blackbutton:hover{
+	background:url(http://street-crime.com/images/attack/black_button_over.png) no-repeat;
+	color:#ccc;
+}
+
+.sale{
+	font-size:20px;
+	color:red;
+}
+
+.strikethrough{
+	text-decoration: line-through;
+}
+
+/****Spinner Round****/
+
+.spinner-wrapper{
+	margin: 15px 20px 30px 0px;
+	background: #333;
+	height:160px;
+	border:1px solid black;
+	width:608px;
+	position: relative;
+	float:left;
+}
+
+.spinner_nav{
+	background: url(../images/slider_nav2.png) no-repeat;
+	height:40px;
+	width:350px;
+	position: absolute;
+	bottom:-25px;
+	left:232px;
+}
+
+.spinner_options{
+	border:1px solid black;
+	height:120px;
+	width:200px;
+	position: absolute;
+	top:20px;
+	left:20px;
+	overflow: hidden;
+}
+
+.spinner_headline_text{
+	color:#ccc;
+	font-weight:bold;
+	font-size:123.1%;
+	float:right;
+	width:350px;
+	padding: 20px 10px 20px 0px;
+}
+
+/****Suggestion boxes*****/
+.suggestion-light-red{
+	padding:10px;
+	width:350px;
+}
+
+/*** Login page ****/
+.loginbox{
+	background: #393939;
+	border-top-left-radius: 5px 5px;
+	border-top-left-radius: 5px 5px;
+	border-top-right-radius: 5px 5px;
+	border-top-right-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+	border-bottom-left-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+	border-bottom-right-radius: 5px 5px;
+	border-top-color: #C3C8BD;
+	padding: 15px 22px;
+	margin: 10px 0px 5px 0px;	
+	
+}
