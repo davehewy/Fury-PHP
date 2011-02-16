@@ -118,4 +118,50 @@
 			return $atts;
 			}
 		}
-	}	
+	}
+	
+	
+	// =========== 
+	// ! Create a form input governed by a php array.   
+	// =========== 
+	
+	if ( ! function_exists('form_input')){
+		function form_input($data = '', $value = '', $extra = ''){
+			$defaults = array('type' => 'text', 'name' => (( ! is_array($data)) ? $data : ''), 'value' => $value);
+	
+			return "<input "._parse_form_attributes($data, $defaults).$extra." />";
+		}
+	}
+	
+	// =========== 
+	// ! Parse the form attributes
+	// =========== 	
+
+	if ( ! function_exists('_parse_form_attributes')){
+		function _parse_form_attributes($attributes, $default){
+			if (is_array($attributes)){
+				foreach ($default as $key => $val){
+					if (isset($attributes[$key])){
+						$default[$key] = $attributes[$key];
+						unset($attributes[$key]);
+					}
+				}
+	
+				if (count($attributes) > 0){
+					$default = array_merge($default, $attributes);
+				}
+			}
+	
+			$att = '';
+			
+			foreach ($default as $key => $val){
+				if ($key == 'value'){
+					$val = form_prep($val, $default['name']);
+				}
+	
+				$att .= $key . '="' . $val . '" ';
+			}
+	
+			return $att;
+		}
+	}
